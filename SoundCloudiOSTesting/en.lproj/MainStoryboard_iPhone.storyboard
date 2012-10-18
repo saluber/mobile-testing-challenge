@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qVx-ya-C11">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Ge7-QJ-CBP">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="qVx-ya-C11" customClass="SCTabBarController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="lX4-6D-bwE">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HuB-rv-YLH" kind="relationship" relationship="viewControllers" id="iye-Jb-Fwk"/>
+                        <segue destination="oeB-l5-N1L" kind="relationship" relationship="viewControllers" id="55Z-Rl-6qd"/>
+                        <segue destination="hEz-WP-h1X" kind="relationship" relationship="viewControllers" id="gNs-Rc-3bL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JQ5-JS-OzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1118" y="-376"/>
+        </scene>
+        <!--You View Controller-->
+        <scene sceneID="EcH-hA-nLV">
+            <objects>
+                <tableViewController storyboardIdentifier="SCYouViewController" id="Kh0-xc-xZx" userLabel="You View Controller" customClass="SCYouViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="K3P-ff-rFS">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="kJb-dC-2rU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="vBF-lL-Yp3" style="IBUITableViewCellStyleDefault" id="nkz-oH-rEm">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Log out" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vBF-lL-Yp3">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="You" id="LA3-Sa-1OM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grM-EE-m8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-160" y="455"/>
+        </scene>
+        <!--Track List-->
+        <scene sceneID="CBP-ev-8y7">
+            <objects>
+                <tableViewController id="oki-7U-3TA" userLabel="Track List" customClass="SCUserTracksViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zqf-GW-HoJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tracks" id="JJ5-60-YDn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o5Z-R2-0Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89" y="-140"/>
+        </scene>
+        <!--Tracks Stack-->
+        <scene sceneID="Uvk-WN-de4">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="oeB-l5-N1L" userLabel="Tracks Stack" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Tracks" image="first.png" id="V5A-jg-SpZ"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="AX3-pz-uPb" customClass="SCNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oki-7U-3TA" kind="relationship" relationship="rootViewController" id="u18-Lw-XEc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLl-DA-H3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-536" y="-140"/>
+        </scene>
+        <!--You Nav Stack-->
+        <scene sceneID="dDg-UF-ngS">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="hEz-WP-h1X" userLabel="You Nav Stack" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="You" image="second.png" id="9Hk-EE-IDs"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="QWP-BP-ZLi" customClass="SCNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kh0-xc-xZx" kind="relationship" relationship="rootViewController" id="UnO-hD-ztp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOX-9u-rrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543" y="450"/>
+        </scene>
+        <!--Favourites List-->
+        <scene sceneID="7Px-TH-Okq">
+            <objects>
+                <tableViewController storyboardIdentifier="SCFavouritesViewController" id="W5m-Er-69n" userLabel="Favourites List" customClass="SCFavouritesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="115" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gex-gm-q9C">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favourites" id="67H-XP-o7T"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2k-94-zaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="-708"/>
+        </scene>
+        <!--Favs Stack-->
+        <scene sceneID="zpb-Uc-yyP">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="HuB-rv-YLH" userLabel="Favs Stack" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="O7L-4H-8Gd"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="m3r-zn-llT" customClass="SCNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="W5m-Er-69n" kind="relationship" relationship="rootViewController" id="QXN-O7-wCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XBF-Yc-Jmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-536" y="-708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first.png" width="30" height="30"/>
+        <image name="second.png" width="30" height="30"/>
+    </resources>
+    <classes>
+        <class className="SCFavouritesViewController" superclassName="SCTrackTableBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCFavouritesViewController.h"/>
+        </class>
+        <class className="SCNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCNavigationBar.h"/>
+        </class>
+        <class className="SCTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCTabBarController.h"/>
+        </class>
+        <class className="SCTrackTableBaseViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCTrackTableBaseViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="loadedTrackTableCell" candidateClass="SCTrackTableCell"/>
+            </relationships>
+        </class>
+        <class className="SCTrackTableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCTrackTableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="waveImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SCUserTracksViewController" superclassName="SCTrackTableBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCUserTracksViewController.h"/>
+        </class>
+        <class className="SCYouViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCYouViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

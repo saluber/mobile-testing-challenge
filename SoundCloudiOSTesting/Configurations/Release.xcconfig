@@ -1,0 +1,13 @@
+//
+//  Release.xcconfig
+//  SoundCloudChallenge
+//
+//  Created by Jonathan Crooke on 11/03/2012.
+//  Copyright (c) 2012 J. Crooke. All rights reserved.
+//
+
+#include "Shared.xcconfig"
+
+VALIDATE_PRODUCT = YES
+OTHER_CFLAGS = -DNS_BLOCK_ASSERTIONS=1
+TEST_AFTER_BUILD = YES

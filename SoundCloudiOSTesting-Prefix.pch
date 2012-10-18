@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'SoundCloudiOSTesting' target in the 'SoundCloudiOSTesting' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+/** Object equality that's safe for either object == nil */
+#define SAFE_EQUAL(a,b) ( (a && b) ? [a isEqual:b] : a == b )
+
+#import "SCAPI.h"
+#import "JSONKit.h"
+#import "SCMe.h"
+#import "SCTrack.h"
+#import "NXOAuth2.h"
+#import "UIViewController+SCAdditions.h"
+#import "AFNetworkActivityIndicatorManager.h"
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+#endif

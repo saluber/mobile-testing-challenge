@@ -1,0 +1,14 @@
+//
+//  Target.xcconfig
+//  SoundCloudChallenge
+//
+//  Created by Jonathan Crooke on 11/03/2012.
+//  Copyright (c) 2012 J. Crooke. All rights reserved.
+//
+
+#include "Shared.xcconfig"
+
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
+TEST_AFTER_BUILD = YES
