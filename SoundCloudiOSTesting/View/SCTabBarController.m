@@ -16,8 +16,10 @@
 @implementation SCTabBarController
 
 - (void) showAuthentication {
+    NSLog(@"SCTabBarController - showAuthentication");
   if (![SCSoundCloud account]) {
     // reset
+    NSLog(@"SCTabBarController - no authenticated account");
     self.selectedIndex = 0;
     
     [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL) {
@@ -29,6 +31,7 @@
                              {
                                if (error.code == -1005 || error.code == 100) {
                                  // user cancelled
+                                 NSLog(@"User Cancelled during authentication.");
                                  UIAlertView *alert = \
                                  [[UIAlertView alloc]
                                   initWithTitle:@"Authentication Error"
@@ -38,8 +41,11 @@
                                   otherButtonTitles:nil];
                                  [alert show];
                                }
+                               else if (error) {
+                                   // Other unchecked error occured
+                                   NSLog(@"Unchecked error during authentication: %@", [error localizedDescription]);
+                               }
                              }];
-      
       [self presentModalViewController:loginViewController
                               animated:YES];
     }];
@@ -47,10 +53,12 @@
 }
 
 - (void) hideAuthentication {
+    NSLog(@"SCTabBarController - hideAuthentication");
   [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void) accountDidChangeNotification:(NSNotification*)note {
+    NSLog(@"SCTabBarController - accountDidChangeNotification");
   [self showAuthentication];
 }
 
@@ -65,6 +73,7 @@
 
 - (void) UIApplicationDidBecomeActiveNotification:(NSNotification*) note {
   // may be necessary to reauthenticate when waking from sleep
+    NSLog(@"SCTabBarController - userDidBecomeActiveNotification");
   [self showAuthentication];
 }
 

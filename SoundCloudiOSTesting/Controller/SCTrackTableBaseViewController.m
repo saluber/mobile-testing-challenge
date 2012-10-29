@@ -53,20 +53,25 @@ static const CGFloat kInactiveAlpha = 0.5;
 
 - (void) subresourceReceived:(NSNotification*)note {
     // got resource for this table?
+    NSLog(@"SCTrackTableBaseViewController - subresourceReceived");
     if ([[SCMe sharedMe].subresources objectForKey:[self resourceName]]) {
+        NSLog(@"SCTrackTableBaseViewController - my resource received, reload table");
         [self.tableView reloadData];
     }
 }
 
 - (void) accountDidChangeNotification:(NSNotification *)note {
+    NSLog(@"SCTrackTableBaseViewController - accountDidChangeNotification");
     if (![SCSoundCloud account]) {
         // no account... inactive
+        NSLog(@"SCTrackTableBaseViewController - unauthenticated account");
         self.navigationController.view.alpha = kInactiveAlpha;
         self.navigationController.view.userInteractionEnabled = NO;
     }
 }
 
 - (void) userInformationReceived:(NSNotification*)note {
+    NSLog(@"SCTrackTableBaseViewController - userInformationReceivedNotification");
     [self.tableView reloadData];
     [[SCMe sharedMe] requestSubresourceNamed:[self resourceName]
                                  objectClass:[SCTrack class]];

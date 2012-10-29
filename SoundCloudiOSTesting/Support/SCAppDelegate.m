@@ -20,6 +20,7 @@
     // so force it to be initialised here...
     // it's protected with a dispatch_once
     [SCMe initialize];
+    
   }
 }
 

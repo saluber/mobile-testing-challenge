@@ -16,12 +16,15 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   // currently only has log out cell...
+    NSLog(@"SCYouViewController - user logged out");
   [SCSoundCloud removeAccess]; 
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void) userInformationReceived:(NSNotification *)note {
+    NSLog(@"SCYouViewController - userInformationReceivedNotification");
   id title = [SCMe sharedMe].username;
+    NSLog(@"SCYouViewController - username: %@", title);
   self.title = ( title != [NSNull null] ) ? title : @"You";  
 }
 

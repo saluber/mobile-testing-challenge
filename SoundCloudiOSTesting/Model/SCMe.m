@@ -123,7 +123,7 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
     self.permalinkURL = [NSURL URLWithString:[dict objectForKey:@"permalink_url"]];
     
     self.avatarURL = [NSURL URLWithString:[dict objectForKey:@"avatar_url"]];
-    //
+    
     self.subresources = [NSDictionary dictionary];
   }
   return self;
