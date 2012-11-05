@@ -12,9 +12,16 @@
 #endif
 
 #import <UIKit/UIKit.h>
+#import "SCTabBarController.h"
 
 /** @class App delegate for SoundCloudiOSTesting */
 
-@interface SCAppDelegate : UIResponder <UIApplicationDelegate>
-@property (strong, nonatomic) UIWindow *window;
+@interface SCAppDelegate : UIResponder <UIApplicationDelegate> {
+    UIWindow * window;
+    SCTabBarController * tab_bar_controller;
+}
+
+@property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (strong, nonatomic) IBOutlet SCTabBarController * tab_bar_controller;
+
 @end

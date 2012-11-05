@@ -1072,6 +1072,7 @@
 				6898537A163E22A90011DDBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

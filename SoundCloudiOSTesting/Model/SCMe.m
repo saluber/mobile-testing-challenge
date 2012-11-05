@@ -83,6 +83,11 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
                           NSData *responseData, 
                           NSError *error) 
       {
+        // Error check for failed account request
+          if (error) {
+              NSLog(@"Unable to request SoundCloud account with error: %@", [error localizedDescription]);
+          }
+          
         id obj = [responseData objectFromJSONData];
         [self setSharedMe:[SCMe objectWithDictionary:obj]];
       }];
@@ -176,6 +181,10 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
                          NSData *responseData, 
                          NSError *error) 
      {
+       if (error) {
+           NSLog(@"Error loading subresource: %@", [error localizedDescription]);
+       }
+         
        NSArray *dicts = [responseData objectFromJSONData];
        NSMutableArray *mute = [[NSMutableArray alloc] initWithCapacity:[dicts count]];
        

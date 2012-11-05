@@ -64,6 +64,7 @@
 
 - (void) alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex {
   // user cancelled retry
+    NSLog(@"SCTabBarController - showAlertView");
   [self showAuthentication];
 }
 

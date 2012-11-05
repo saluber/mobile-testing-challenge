@@ -50,6 +50,7 @@
   [self.avatarImageView cancelCurrentImageLoad];
 
   // show spinner...
+    NSLog(@"SCNavigationBar - userInformationReveived - Update Avatar URL");
   NSURL *url = [[SCMe sharedMe] avatarURL];
   if (url) {
     [self.avatarImageView setImageWithURL:url];
