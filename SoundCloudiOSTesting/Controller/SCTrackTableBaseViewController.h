@@ -18,5 +18,4 @@
 
 /** The Me subresource we want to watch/request for this table */
 - (NSString*) resourceName;
-
 @end

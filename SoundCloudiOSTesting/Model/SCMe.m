@@ -24,7 +24,7 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
   
   @synchronized([SCMe class]) {
     _sharedMe = me;
-  }  
+  }
   
   // the user changed?
   if (notify) {
@@ -40,6 +40,11 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
     ret = _sharedMe;
   }
   return ret;
+}
+
+// Added as test hook for automatic SoundCloud Account login
++ (void) automaticSCAccountLogin {
+    [SCSoundCloud requestTestAccess:@"SCAppTest" password:@"SCAppTest23"];
 }
 
 + (void) initialize {
@@ -58,6 +63,8 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
       // might already have an account by now...
       [self accountDidChange:nil];
     }
+    // After attempting to de-archive Force automatic login for test SoundCloud Account
+    [self automaticSCAccountLogin];
   });
 }
 

@@ -28,7 +28,7 @@
         <!--You View Controller-->
         <scene sceneID="EcH-hA-nLV">
             <objects>
-                <tableViewController storyboardIdentifier="SCYouViewController" id="Kh0-xc-xZx" userLabel="You View Controller" customClass="SCYouViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SCYouViewController" title="YouViewController" id="Kh0-xc-xZx" userLabel="You View Controller" customClass="SCYouViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="K3P-ff-rFS">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
         <!--Track List-->
         <scene sceneID="CBP-ev-8y7">
             <objects>
-                <tableViewController id="oki-7U-3TA" userLabel="Track List" customClass="SCUserTracksViewController" sceneMemberID="viewController">
+                <tableViewController title="TracksViewController" id="oki-7U-3TA" userLabel="Track List" customClass="SCUserTracksViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zqf-GW-HoJ">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Tracks Stack-->
         <scene sceneID="Uvk-WN-de4">
             <objects>
-                <navigationController definesPresentationContext="YES" id="oeB-l5-N1L" userLabel="Tracks Stack" sceneMemberID="viewController">
+                <navigationController title="TracksNavigationController" definesPresentationContext="YES" id="oeB-l5-N1L" userLabel="Tracks Stack" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tracks" image="first.png" id="V5A-jg-SpZ"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="AX3-pz-uPb" customClass="SCNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
@@ -98,7 +98,7 @@
         <!--You Nav Stack-->
         <scene sceneID="dDg-UF-ngS">
             <objects>
-                <navigationController definesPresentationContext="YES" id="hEz-WP-h1X" userLabel="You Nav Stack" sceneMemberID="viewController">
+                <navigationController title="YouNavigationController" definesPresentationContext="YES" id="hEz-WP-h1X" userLabel="You Nav Stack" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="You" image="second.png" id="9Hk-EE-IDs"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="QWP-BP-ZLi" customClass="SCNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>

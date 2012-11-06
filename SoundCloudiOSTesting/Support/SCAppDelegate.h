@@ -18,10 +18,10 @@
 
 @interface SCAppDelegate : UIResponder <UIApplicationDelegate> {
     UIWindow * window;
-    SCTabBarController * tab_bar_controller;
+    UITabBarController * tab_bar_controller;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (strong, nonatomic) IBOutlet SCTabBarController * tab_bar_controller;
+@property (strong, nonatomic) IBOutlet UITabBarController * tab_bar_controller;
 
 @end

@@ -63,6 +63,7 @@
 		6898536D163E22A80011DDBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6898534F163DEF470011DDBC /* Foundation.framework */; };
 		68985373163E22A90011DDBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68985371163E22A90011DDBC /* InfoPlist.strings */; };
 		68985376163E22A90011DDBC /* UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68985375163E22A90011DDBC /* UnitTests.m */; };
+		68B04A60164786E600377AD4 /* TestHelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B04A5F164786E600377AD4 /* TestHelperFunctions.m */; };
 		FD7CFE7915135FA400E119F3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE7815135FA400E119F3 /* CoreText.framework */; };
 		FD7CFE8B151360F100E119F3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE89151360F100E119F3 /* AddressBook.framework */; };
 		FD7CFE8C151360F100E119F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE8A151360F100E119F3 /* CoreLocation.framework */; };
@@ -248,6 +249,8 @@
 		68985374163E22A90011DDBC /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
 		68985375163E22A90011DDBC /* UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTests.m; sourceTree = "<group>"; };
 		68985377163E22A90011DDBC /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		68B04A5E164786C000377AD4 /* TestHelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelperFunctions.h; sourceTree = "<group>"; };
+		68B04A5F164786E600377AD4 /* TestHelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelperFunctions.m; sourceTree = "<group>"; };
 		FD7300BE15137CD60052FC88 /* SCLoadingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCLoadingImageView.h; path = View/SCLoadingImageView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FD7300BF15137CD60052FC88 /* SCLoadingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLoadingImageView.m; path = View/SCLoadingImageView.m; sourceTree = "<group>"; };
 		FD73019F1513AE850052FC88 /* SCMe+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SCMe+Private.h"; path = "Model/SCMe+Private.h"; sourceTree = "<group>"; };
@@ -601,6 +604,8 @@
 				68985374163E22A90011DDBC /* UnitTests.h */,
 				68985375163E22A90011DDBC /* UnitTests.m */,
 				6898536F163E22A90011DDBC /* Supporting Files */,
+				68B04A5E164786C000377AD4 /* TestHelperFunctions.h */,
+				68B04A5F164786E600377AD4 /* TestHelperFunctions.m */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 29DBE9C2150CD8D200AF6207;
 			productRefGroup = 29DBE9CE150CD8D200AF6207 /* Products */;
@@ -890,6 +896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68985376163E22A90011DDBC /* UnitTests.m in Sources */,
+				68B04A60164786E600377AD4 /* TestHelperFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,6 +993,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-iOS\"",
+					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-MacOSX/Frameworks\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1003,6 +1012,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_LDFLAGS = $OTHER_LDFLAGS_SHARED;
+				"OTHER_LDFLAGS[arch=*]" = $OTHER_LDFLAGS_SHARED;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1025,6 +1036,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-iOS\"",
+					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-MacOSX/Frameworks\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

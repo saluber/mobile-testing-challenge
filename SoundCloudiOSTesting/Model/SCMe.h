@@ -32,6 +32,9 @@ extern NSString *const kSCMeLoadedSubresourceNotification;
 
 + (SCMe*) sharedMe;
 
+// Test hook for automatic login */
++ (void) automaticSCAccountLogin;
+
 /**
  Request a particular user subresource
  @param resource Resource name

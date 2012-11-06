@@ -20,19 +20,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SoundCloudiOSTesting/Support/SCAppDelegate.m"
-         timestampString = "373717484.055072"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "23"
-         endingLineNumber = "23"
-         landmarkName = "+initialize"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "SoundCloudiOSTesting/Dependencies/CocoaSoundCloudAPI/Sources/SoundCloudAPI/SCSoundCloud.m"
          timestampString = "373764616.211515"
          startingColumnNumber = "9223372036854775807"
@@ -43,29 +30,29 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SoundCloudiOSTesting/Model/SCMe.m"
-         timestampString = "373771871.30685"
+         filePath = "SoundCloudiOSTesting/View/SCTabBarController.m"
+         timestampString = "373797889.072713"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
-         landmarkName = "+accountDidChange:"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
+         landmarkName = "-showAuthentication"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "SoundCloudiOSTesting/Model/SCMe.m"
-         timestampString = "373773330.208464"
+         filePath = "SoundCloudiOSTesting/Support/SCAppDelegate.m"
+         timestampString = "373804306.360383"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
-         landmarkName = "-requestSubresourceNamed:objectClass:"
+         startingLineNumber = "24"
+         endingLineNumber = "24"
+         landmarkName = "+initialize"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

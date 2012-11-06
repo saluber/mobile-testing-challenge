@@ -1,65 +1,30 @@
-Mobile Team Testing Challenge
-=============================
+Samantha Luber
+11/04/2012
+SoundCloudiOSTestingChallenge
 
-This application is a simple API client that allows a user to log in and displays their tracks and likes. Currently it does not contain any testing whatsoever.
+I had a lot of fun working on the SoundCloudiOSTestingChallenge! With little prior experience in iOS development, the SoundCloud API and SDK, and using the iOS unit testing tools, I definitely learned a lot :). Although I do however have past experience in Android development, so I found the overall app structure and environment to be similar. Here's a summary of my test approach:
 
-Test Approach
---------
+Before looking at the code, I spent some time using the app and "exploratory testing" in iOSSimulator to get a better understanding of the app's features and the core user scenarios. I then made a user scenario flowchart that showcases all of the states a user can be in while he or she is using the app. This type of scenario/model-based testing accomplishes several things. First, the model allows the tester to evaluate if the user scenarios are complete and intuitive. In addition, the model allows the tester to see the critical (or most commonly used) user scenarios. The tester should spend more effort testing critical scenarios to maximize quality for the user. Finally, creating user experience models allows the tester to determine failure cases for the app. At every state in the flowchart, the tester can ask questions, such as "What are the failure cases for this state? What can go wrong here?" Given the failure cases for each state, the tester can ask additional design questions, such as "How likely is each failure case? How does the app communicate to the user that an error has occurred? Is there a work around for this failure? How much will the failure impact the user?" These types of quality testing questions are sometimes overlooked when focusing on testing solely for functionality and can make a very noticeable difference to the users!
 
-Outline in detail in SamanthaLuber_TestApproach.pdf, I began my test approach with
-general exploratory manual testing to gain a better understanding of the app features
-and components to be tested. After that, I dove into the app implementation and created
-three flowcharts outlining the code architecture for the model, view, and controller 
-components of the app. Breaking my unit tests up by these three categories, I created
-a series of application unit test scenarios and used the code architecture flowcharts to
-verify that all functions and classes in the code had been covered sufficiently.
+Testing Scope:
+Using the aforementioned model, I focused on testing this app from the user's perspective. As this app only offered a few of the SoundCloud API features, my main areas of testing focus were: navigation between views, verifying the app's loaded SCAccount data correctly, and testing the behavior of the SCAccount throughout the app's lifecycle. Because requests and loads happen asynchronously, I was curious to see what kind of failure cases can result from having stale data. For the majority of my testing, I focused on testing features and prominent scenarios that a normal user would likely see/use when using the app.
 
-As I am new to iOS development and the associated test tools, I was unable to finish
-implementing my unit tests for the project within the week deadline. My goal for having
-automation unit tests is to use these tests to quickly verify any code changes to ensure
-the code change hasn't broken existing code.
+Out of Testing Scope:
+I also initially looked into implementing lower-level logic unit tests for the app's functions and classes, but I decided against it as the majority of the app's work is done either in the SoundCloud API or through extending existing iOS or SoundCloud view controllers. I didn't focus too much on testing unlikely user scenarios and I didn't test the app's dependencies. I also originally created test cases around tracking view communication by watching when NSNotifications occur and determining whether or not the view controllers respond correctly, but I decided that focusing on feature testing and verifying loaded data was more worthwhile for the challenge.
 
-After moving on from unit testing, I focused on testing from the user's perspective. I 
-created a user scenario flowchart that showcases all of the states a user can be in while
-he or she is using the app. This type of scenario/model-based testing accomplishes 
-several things. First, the model allows the tester to evaluate if the user scenarios are
-complete and intuitive. In addition, the model allows the tester to see the critical (or
-most commonly used) user scenarios. The tester should spend more effort testing critical
-scenarios to maximize quality for the user. Finally, creating user experience models
-allows the tester to determine failure cases for the app. At every state in the flowchart,
-the tester can ask questions, such as "What are the failure cases for this state? What
-can go wrong here?" Given the failure cases for each state, the tester can ask additional
-design questions, such as "How likely is each failure case? How does the app communicate
-to the user that an error has occurred? Is there a work around for this failure? How much
-will the failure impact the user?" These types of quality testing questions are sometimes
-overlooked when focusing on testing solely for functionality and can make a very noticeable
-difference to the users!
+In addition, outlined in detail in SamanthaLuber_TestApproach.pdf, I also created test cases based on additional considerations, such as multi-language support, security, reliability, etc. I've also included bugs/issues I ran into while testing the app in this document. When used in combination with initial unit testing, I believe this method of model-based testing can be effectively used in an development workflow. This combined method allows the tester to initially test that smaller components, such as functions as classes, are working with unit tests (that can also be used to verify later code changes). Once the code is functioning well, the tester can focus more effort on testing higher-level metrics of the app, such as user experience and quality. However, quality testing doesn't need to wait until after code is written. The tester can and should play an active role in the planning and development process to ensure that the app and underlying architecture is designed with consideration to user experience for a broad audience.
 
-Finally, I included some additional test considerations in the included pdf with my test
-approach that discusses test considerations, such as testing for different languages,
-security, reliability, etc. I also included a few bugs/issues I ran into while using the
-app. 
+Other notes:
+ - When I was learning how requests and notifications work in the app, I added NSLog statements when notifications occur and at specific places in key functions. The NSLogs are disabled for Release mode.
+ - To validate loaded and displayed information, I made a SoundCloud account for testing and modified the account according to the conditions I was testing on
+- In order to automate my test cases, I added a test hook to SCMe that does a forced login to my test SoundCloud account. This forced login only happens once at app launch, so I put the function call with the other SCMe initialization code as it only dispatches once.
+- As I was initially spending time creating test cases that verified view behavior based on NSNotifications, my test class subscribes to all notifications but in the final test case suite, these notifications aren't used. Because my iOS's SenTestCase doesn't support multi-threading, I used semaphores that signal when a notification occurs as a somewhat hack for avoiding having to import additional test suite libraries. 
+- I implemented more extensive SoundCloud API functionality in TestHelperFunctions (such as add and remove a favorite or track or clear archive files) as additional test hooks for looking at app behavior in various states.
+- Two of my automatic test cases actually fail because the app doesn't reload its sub resources when the account is changed from an external source
 
-I believe this incremental method of testing can be used in an development workflow. This 
-method allows the tester to initially test that smaller components, such as functions as 
-classes, are working with unit tests (that can also be used to verify later code changes).
-Once the code is functioning well, the tester can focus more effort on testing higher-level
-metrics of the app, such as user experience and quality. However, quality testing doesn't
-need to wait until after code is written. The tester can and should play an active role
-in the planning and development process to ensure that the app and underlying architecture
-is designed with consideration to test considerations, such as user experience, multiple
-language support, etc. 
+My test case suite is implemented in UnitTests. Each test case has been documented in the comments heading, but please feel free to contacts me with any additional questions! As it wasn't feasible to implement all of my ideas for test cases, please see SamanthaLuber_TestApproach.pdf for an extended list of test cases, graphs that model both the user state and the underlying app architecture, additional test considerations, and the bugs/issues I found while testing!
 
-
-Repository Notes
-----------------
-1. Unit tests provided in detail in SamanthaLuber_TestApproach.pdf
-2. Placeholders for automation unit tests in app project
-3. NSLog is only enabled for Debug/Simulator mode
-4. Manual testing with NSLog can be used to perform unit tests
-
-Please feel free to contact me with any questions! Thank you, I had fun and learned a lot about the 
-iOS development environment! :)
+Thank you again for the opportunity to participate in this challenge!!
 
 Best,
-Samantha Luber
+Samantha Luber 
