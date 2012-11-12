@@ -8,10 +8,14 @@
 
 #import "SCTabBarController.h"
 #import "SCLoginViewController.h"
+#import "Tests.h"
 
 @interface SCTabBarController () <UIAlertViewDelegate>
 - (void) UIApplicationDidBecomeActiveNotification:(NSNotification*) note;
 @end
+
+// Used to siganl for valid user session
+NSString *const validUserSession = @"UserSessionIsValid";
 
 @implementation SCTabBarController
 
@@ -22,7 +26,7 @@
     NSLog(@"SCTabBarController - no authenticated account");
     self.selectedIndex = 0;
     
-    [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL *preparedURL) {
+    [SCSoundCloud requestAccessWithPreparedAuthorizationURLHandler:^(NSURL* preparedURL) {
       
       SCLoginViewController *loginViewController;
       loginViewController = [SCLoginViewController
@@ -49,12 +53,31 @@
       [self presentModalViewController:loginViewController
                               animated:YES];
     }];
-  }
+    
+        // Forced automatic SoundCloud account login
+        static dispatch_once_t authenticateSessionOnce;
+        dispatch_once(&authenticateSessionOnce, ^{
+                [SCMe automaticSCAccountLogin];
+        });
+    }
+    else {
+        // Test information loaded correctly
+        SCTabBarController *tbc = self;
+       [Tests testUserLoaded];
+       [Tests testViewNavigation:tbc];
+    }
 }
 
 - (void) hideAuthentication {
     NSLog(@"SCTabBarController - hideAuthentication");
   [self dismissViewControllerAnimated:YES completion:^{}];
+  
+  // Test information loaded correctly
+        // Test information loaded correctly
+        if (self) {
+            [Tests testUserLoaded];
+            [Tests testViewNavigation:self];
+        }
 }
 
 - (void) accountDidChangeNotification:(NSNotification*)note {

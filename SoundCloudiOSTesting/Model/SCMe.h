@@ -32,7 +32,7 @@ extern NSString *const kSCMeLoadedSubresourceNotification;
 
 + (SCMe*) sharedMe;
 
-// Test hook for automatic login */
+// Test hook for automatic account login
 + (void) automaticSCAccountLogin;
 
 /**

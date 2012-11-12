@@ -18,4 +18,8 @@
 
 /** The Me subresource we want to watch/request for this table */
 - (NSString*) resourceName;
+
+/** The Test app functions for this table */
+- (void)testViewController;
+- (void) testViewDataWithChange;
 @end

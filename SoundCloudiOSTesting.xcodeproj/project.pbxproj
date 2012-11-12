@@ -58,12 +58,8 @@
 		49AF92CD1630426E007E13F0 /* libSoundCloudAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AF92A01630402F007E13F0 /* libSoundCloudAPI.a */; };
 		49AF92CE1630426E007E13F0 /* libSoundCloudUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AF92B716304041007E13F0 /* libSoundCloudUI.a */; };
 		49FA778416304A24001E4AA6 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF926516303F86007E13F0 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6898536B163E22A80011DDBC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6898534B163DEF470011DDBC /* SenTestingKit.framework */; };
-		6898536C163E22A80011DDBC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6898534D163DEF470011DDBC /* UIKit.framework */; };
-		6898536D163E22A80011DDBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6898534F163DEF470011DDBC /* Foundation.framework */; };
-		68985373163E22A90011DDBC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68985371163E22A90011DDBC /* InfoPlist.strings */; };
-		68985376163E22A90011DDBC /* UnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68985375163E22A90011DDBC /* UnitTests.m */; };
-		68B04A60164786E600377AD4 /* TestHelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B04A5F164786E600377AD4 /* TestHelperFunctions.m */; };
+		689487BD164BD613002C6614 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 689487BC164BD613002C6614 /* Tests.m */; };
+		689487C0164BD62A002C6614 /* TestHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 689487BF164BD62A002C6614 /* TestHelpers.m */; };
 		FD7CFE7915135FA400E119F3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE7815135FA400E119F3 /* CoreText.framework */; };
 		FD7CFE8B151360F100E119F3 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE89151360F100E119F3 /* AddressBook.framework */; };
 		FD7CFE8C151360F100E119F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7CFE8A151360F100E119F3 /* CoreLocation.framework */; };
@@ -156,13 +152,6 @@
 			remoteGlobalIDString = F62E0CE5148FB27100BE8F14;
 			remoteInfo = SoundCloudUI.framework;
 		};
-		6898537B163E22BC0011DDBC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29DBE9C4150CD8D200AF6207 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 29DBE9CC150CD8D200AF6207;
-			remoteInfo = SoundCloudiOSTesting;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -240,17 +229,13 @@
 		49AF92C316304118007E13F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		49AF92C5163041B4007E13F0 /* SoundCloud.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SoundCloud.bundle; path = SoundCloudiOSTesting/Dependencies/CocoaSoundCloudUI/SoundCloud.bundle; sourceTree = "<group>"; };
 		49AF92C71630422D007E13F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		689487BB164BD609002C6614 /* Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests.h; sourceTree = "<group>"; };
+		689487BC164BD613002C6614 /* Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		689487BE164BD620002C6614 /* TestHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
+		689487BF164BD62A002C6614 /* TestHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelpers.m; sourceTree = "<group>"; };
 		6898534B163DEF470011DDBC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		6898534D163DEF470011DDBC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		6898534F163DEF470011DDBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6898536A163E22A80011DDBC /* UnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		68985370163E22A90011DDBC /* UnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
-		68985372163E22A90011DDBC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		68985374163E22A90011DDBC /* UnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitTests.h; sourceTree = "<group>"; };
-		68985375163E22A90011DDBC /* UnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnitTests.m; sourceTree = "<group>"; };
-		68985377163E22A90011DDBC /* UnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UnitTests-Prefix.pch"; sourceTree = "<group>"; };
-		68B04A5E164786C000377AD4 /* TestHelperFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelperFunctions.h; sourceTree = "<group>"; };
-		68B04A5F164786E600377AD4 /* TestHelperFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestHelperFunctions.m; sourceTree = "<group>"; };
 		FD7300BE15137CD60052FC88 /* SCLoadingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SCLoadingImageView.h; path = View/SCLoadingImageView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		FD7300BF15137CD60052FC88 /* SCLoadingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCLoadingImageView.m; path = View/SCLoadingImageView.m; sourceTree = "<group>"; };
 		FD73019F1513AE850052FC88 /* SCMe+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SCMe+Private.h"; path = "Model/SCMe+Private.h"; sourceTree = "<group>"; };
@@ -295,16 +280,6 @@
 				29DBE9D2150CD8D200AF6207 /* UIKit.framework in Frameworks */,
 				29DBE9D4150CD8D200AF6207 /* Foundation.framework in Frameworks */,
 				29DBE9D6150CD8D200AF6207 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68985366163E22A80011DDBC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6898536B163E22A80011DDBC /* SenTestingKit.framework in Frameworks */,
-				6898536C163E22A80011DDBC /* UIKit.framework in Frameworks */,
-				6898536D163E22A80011DDBC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +433,6 @@
 				29CB5AF8150CF4A8007FD289 /* Supporting Files */,
 				29C08CFE150CF74C00225A40 /* Dependencies */,
 				FDAB9D8E1513616B002326CA /* Resources */,
-				6898536E163E22A80011DDBC /* UnitTests */,
 				6898534A163DEF470011DDBC /* Frameworks */,
 				29DBE9CE150CD8D200AF6207 /* Products */,
 				FDD8FA53151356F8007124C9 /* README.md */,
@@ -469,7 +443,6 @@
 			isa = PBXGroup;
 			children = (
 				29DBE9CD150CD8D200AF6207 /* SoundCloudiOSTesting.app */,
-				6898536A163E22A80011DDBC /* UnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -598,34 +571,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6898536E163E22A80011DDBC /* UnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				68985374163E22A90011DDBC /* UnitTests.h */,
-				68985375163E22A90011DDBC /* UnitTests.m */,
-				6898536F163E22A90011DDBC /* Supporting Files */,
-				68B04A5E164786C000377AD4 /* TestHelperFunctions.h */,
-				68B04A5F164786E600377AD4 /* TestHelperFunctions.m */,
-			);
-			path = UnitTests;
-			sourceTree = "<group>";
-		};
-		6898536F163E22A90011DDBC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				68985370163E22A90011DDBC /* UnitTests-Info.plist */,
-				68985371163E22A90011DDBC /* InfoPlist.strings */,
-				68985377163E22A90011DDBC /* UnitTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		FDAB9D8E1513616B002326CA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				2901E3CF150D0562008EBE2D /* MainStoryboard_iPhone.storyboard */,
 				FDAB9D9715136BFA002326CA /* SCTrackTableCell.xib */,
 				49AF92C5163041B4007E13F0 /* SoundCloud.bundle */,
+				689487BB164BD609002C6614 /* Tests.h */,
+				689487BC164BD613002C6614 /* Tests.m */,
+				689487BE164BD620002C6614 /* TestHelpers.h */,
+				689487BF164BD62A002C6614 /* TestHelpers.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -649,25 +604,6 @@
 			productName = SoundCloudiOSTesting;
 			productReference = 29DBE9CD150CD8D200AF6207 /* SoundCloudiOSTesting.app */;
 			productType = "com.apple.product-type.application";
-		};
-		68985369163E22A80011DDBC /* UnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68985378163E22A90011DDBC /* Build configuration list for PBXNativeTarget "UnitTests" */;
-			buildPhases = (
-				68985365163E22A80011DDBC /* Sources */,
-				68985366163E22A80011DDBC /* Frameworks */,
-				68985367163E22A80011DDBC /* Resources */,
-				68985368163E22A80011DDBC /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6898537C163E22BC0011DDBC /* PBXTargetDependency */,
-			);
-			name = UnitTests;
-			productName = UnitTests;
-			productReference = 6898536A163E22A80011DDBC /* UnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -719,7 +655,6 @@
 			projectRoot = "";
 			targets = (
 				29DBE9CC150CD8D200AF6207 /* SoundCloudiOSTesting */,
-				68985369163E22A80011DDBC /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -833,31 +768,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68985367163E22A80011DDBC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68985373163E22A90011DDBC /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		68985368163E22A80011DDBC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29DBE9C9150CD8D200AF6207 /* Sources */ = {
@@ -888,27 +799,12 @@
 				49AF92C01630407D007E13F0 /* AFURLConnectionOperation.m in Sources */,
 				49AF92C11630407D007E13F0 /* AFXMLRequestOperation.m in Sources */,
 				49FA778416304A24001E4AA6 /* GTMNSString+HTML.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68985365163E22A80011DDBC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68985376163E22A90011DDBC /* UnitTests.m in Sources */,
-				68B04A60164786E600377AD4 /* TestHelperFunctions.m in Sources */,
+				689487BD164BD613002C6614 /* Tests.m in Sources */,
+				689487C0164BD62A002C6614 /* TestHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		6898537C163E22BC0011DDBC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 29DBE9CC150CD8D200AF6207 /* SoundCloudiOSTesting */;
-			targetProxy = 6898537B163E22BC0011DDBC /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2901E3CF150D0562008EBE2D /* MainStoryboard_iPhone.storyboard */ = {
@@ -918,14 +814,6 @@
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			path = SoundCloudiOSTesting;
-			sourceTree = "<group>";
-		};
-		68985371163E22A90011DDBC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68985372163E22A90011DDBC /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		FDAB9D9715136BFA002326CA /* SCTrackTableCell.xib */ = {
@@ -980,83 +868,6 @@
 			};
 			name = Release;
 		};
-		68985379163E22A90011DDBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SoundCloudiOSTesting.app/SoundCloudiOSTesting";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-iOS\"",
-					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-MacOSX/Frameworks\"",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_LDFLAGS = $OTHER_LDFLAGS_SHARED;
-				"OTHER_LDFLAGS[arch=*]" = $OTHER_LDFLAGS_SHARED;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				"TEST_HOST[sdk=*]" = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		6898537A163E22A90011DDBC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SoundCloudiOSTesting.app/SoundCloudiOSTesting";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-iOS\"",
-					"\"$(SRCROOT)/gh-unit-master/Examples/MyTestable-MacOSX/Frameworks\"",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UnitTests/UnitTests-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "UnitTests/UnitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALIDATE_PRODUCT = YES;
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1074,15 +885,6 @@
 			buildConfigurations = (
 				29DBEA04150CD8D200AF6207 /* Debug */,
 				29DBEA05150CD8D200AF6207 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		68985378163E22A90011DDBC /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				68985379163E22A90011DDBC /* Debug */,
-				6898537A163E22A90011DDBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

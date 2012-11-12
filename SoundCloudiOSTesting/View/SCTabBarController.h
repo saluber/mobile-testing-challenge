@@ -14,5 +14,11 @@
  appropriately
  */
 
+extern NSString *const validUserSession;
+
 @interface SCTabBarController : UITabBarController
+
+// For authenticating account before beginning tests
+- (void) showAuthentication;
+
 @end

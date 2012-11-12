@@ -10,6 +10,7 @@
 #import "SCTrackTableCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GTMNSString+HTML.h"
+#import "Tests.h"
 
 static NSString *const kSCURLFormat = @"soundcloud:tracks:%@";
 static const CGFloat kInactiveAlpha = 0.5;
@@ -57,6 +58,12 @@ static const CGFloat kInactiveAlpha = 0.5;
     if ([[SCMe sharedMe].subresources objectForKey:[self resourceName]]) {
         NSLog(@"SCTrackTableBaseViewController - my resource received, reload table");
         [self.tableView reloadData];
+    }
+    
+    if ([[self resourceName] isEqualToString:@"favorites"]) {
+        // Verify loaded info
+        [self testViewController];
+        [self testViewDataWithChange];
     }
 }
 
@@ -106,6 +113,19 @@ static const CGFloat kInactiveAlpha = 0.5;
     NSLog(@"Don't use base class!");
     [self doesNotRecognizeSelector:_cmd];
     return nil;
+}
+
+- (void)testViewController {
+    // Use inherited class version
+    NSLog(@"Don't use base class!");
+    [self doesNotRecognizeSelector:_cmd];
+}
+
+
+- (void) testViewDataWithChange {
+    // User inherited class version
+    NSLog(@"Don't use base class!");
+    [self doesNotRecognizeSelector:_cmd];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView

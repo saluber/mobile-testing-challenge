@@ -8,6 +8,7 @@
 
 #import "SCYouViewController.h"
 #import "SCMe.h"
+#import "Tests.h"
 
 @interface SCYouViewController ()
 @end
@@ -19,13 +20,19 @@
     NSLog(@"SCYouViewController - user logged out");
   [SCSoundCloud removeAccess]; 
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+  [Tests testYouViewController];
 }
 
 - (void) userInformationReceived:(NSNotification *)note {
     NSLog(@"SCYouViewController - userInformationReceivedNotification");
   id title = [SCMe sharedMe].username;
     NSLog(@"SCYouViewController - username: %@", title);
-  self.title = ( title != [NSNull null] ) ? title : @"You";  
+  self.title = ( title != [NSNull null] ) ? title : @"You";
+  
+  // Logout
+  NSIndexPath * index = [[NSIndexPath alloc] initWithIndex:0];
+  [self tableView:[self tableView] didSelectRowAtIndexPath:index];
 }
 
 - (void) awakeFromNib {

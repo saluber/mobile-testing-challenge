@@ -9,6 +9,7 @@
 #import "SCMe.h"
 #import "SCMe+Private.h"
 #import "SCTrack.h"
+#import "Tests.h"
 
 __strong static SCMe* _sharedMe = nil;
 NSString *const kSCMeLoadedUserInfoNotification = @"SCMeLoadedUserInfoNotification";
@@ -44,6 +45,7 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
 
 // Added as test hook for automatic SoundCloud Account login
 + (void) automaticSCAccountLogin {
+    // Wait for session to authenticate
     [SCSoundCloud requestTestAccess:@"SCAppTest" password:@"SCAppTest23"];
 }
 
@@ -63,8 +65,6 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
       // might already have an account by now...
       [self accountDidChange:nil];
     }
-    // After attempting to de-archive Force automatic login for test SoundCloud Account
-    [self automaticSCAccountLogin];
   });
 }
 
@@ -99,7 +99,14 @@ NSString *const kSCMeLoadedSubresourceNotification = @"SCMeLoadedSubresourceNoti
         [self setSharedMe:[SCMe objectWithDictionary:obj]];
       }];
       [self archive];
-    } 
+      
+      // Loaded from online DB
+      [Tests testNoArchiveUserLoaded];
+    }
+    else {
+        // Loaded from archive
+        [Tests testArchivesUserLoaded];
+    }
   } else {
     // reset me...
     [self setSharedMe:nil];

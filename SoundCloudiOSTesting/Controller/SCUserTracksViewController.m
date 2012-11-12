@@ -15,4 +15,9 @@
 
 - (NSString*) resourceName { return @"tracks"; }
 
+/** The Test app functions for this table */
+- (void)testViewController {}
+- (void) testViewDataWithChange {}
+/* Note: I only performed checks for favourites becuase favourites and tracks extend the same SCTrackTableBaseViewController, so the test case is redundant.*/
+
 @end
