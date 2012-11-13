@@ -213,8 +213,8 @@
         
         // Verify YouViewController
         title = [[NSString alloc]initWithString:[tab_bar_controller.selectedViewController title]];
-        if(![title isEqualToString:@"SCTestApp"]) {
-            NSLog(@"Incorrect view loaded! Expected: YouNavigationController, Actual:%@", title);
+        if(![title isEqualToString:@"SCAppTest"]) {
+            NSLog(@"Incorrect view loaded! Expected: SCAppTest, Actual:%@", title);
         }
     }
     
