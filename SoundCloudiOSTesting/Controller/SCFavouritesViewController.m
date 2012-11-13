@@ -27,6 +27,7 @@
 - (void)testViewController
 {
     if ([SCMe sharedMe] && [SCSoundCloud account]) {
+    
         // Verify tracks loaded match actual account favourite tracks
         NSArray * propertyArray = [[SCMe sharedMe].subresources objectForKey:@"favorites"];
         
