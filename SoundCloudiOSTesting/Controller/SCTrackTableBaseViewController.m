@@ -57,7 +57,9 @@ static const CGFloat kInactiveAlpha = 0.5;
     NSLog(@"SCTrackTableBaseViewController - subresourceReceived");
     if ([[SCMe sharedMe].subresources objectForKey:[self resourceName]]) {
         NSLog(@"SCTrackTableBaseViewController - my resource received, reload table");
-        [self.tableView reloadData];
+        @synchronized([SCTrackTableBaseViewController class]) {
+            [self.tableView reloadData];
+        }
     }
     
     if ([[self resourceName] isEqualToString:@"favorites"]) {

@@ -29,10 +29,6 @@
   id title = [SCMe sharedMe].username;
     NSLog(@"SCYouViewController - username: %@", title);
   self.title = ( title != [NSNull null] ) ? title : @"You";
-  
-  // Logout
-  NSIndexPath * index = [[NSIndexPath alloc] initWithIndex:0];
-  [self tableView:[self tableView] didSelectRowAtIndexPath:index];
 }
 
 - (void) awakeFromNib {

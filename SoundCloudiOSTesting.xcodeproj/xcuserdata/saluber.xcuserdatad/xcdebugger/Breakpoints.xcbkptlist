@@ -306,19 +306,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Tests.m"
-         timestampString = "374134185.973931"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "197"
-         endingLineNumber = "197"
-         landmarkName = "+testViewNavigation:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "SoundCloudiOSTesting/Controller/SCFavouritesViewController.m"
          timestampString = "374283523.37147"
          startingColumnNumber = "9223372036854775807"

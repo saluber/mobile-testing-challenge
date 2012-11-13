@@ -19,3 +19,6 @@
 [submodule "SoundCloudiOSTesting/Dependencies/SDWebImage"]
 	path = SoundCloudiOSTesting/Dependencies/SDWebImage
 	url = https://github.com/rs/SDWebImage.git
+[submodule "CocoaSoundCloudAPI"]
+	path = CocoaSoundCloudAPI
+	url = git@github.com:saluber/CocoaSoundCloudAPI.git

@@ -66,26 +66,32 @@
 - (void) testViewDataWithChange
 {
     if ([SCMe sharedMe] && [SCSoundCloud account]) {
-        // Test hook removes favorite
-        [TestHelpers removeFavorite:@"58224511"];
+    
+        // Only execute test once to avoid async issues with add/delete
+        static dispatch_once_t onceTestToken;
+        dispatch_once(&onceTestToken, ^{
         
-        NSArray * propertyArray = [[SCMe sharedMe].subresources objectForKey:@"favorites"];
-        
-        // Verify number of favorite tracks from test account
-        NSInteger numFavs = [propertyArray count];
-        if(numFavs != 1) {
-            NSLog(@"Table isn't updated with deleted fav track.");
-        }
-        
-        // Test hook re-adds favorite
-        [TestHelpers addFavorite:@"58224511"];
-        
-        // Verify number of favorite tracks from test account
-        propertyArray = [[SCMe sharedMe].subresources objectForKey:@"favorites"];
-        numFavs = [propertyArray count];
-        if(numFavs != 2) {
-            NSLog(@"Table isn't updated with added fav track.");
-        }
+            // Test hook removes favorite
+            [TestHelpers removeFavorite:@"58224511"];
+            
+            NSArray * propertyArray = [[SCMe sharedMe].subresources objectForKey:@"favorites"];
+            
+            // Verify number of favorite tracks from test account
+            NSInteger numFavs = [propertyArray count];
+            if(numFavs != 1) {
+                NSLog(@"Table isn't updated with deleted fav track.");
+            }
+            
+            // Test hook re-adds favorite
+            [TestHelpers addFavorite:@"58224511"];
+            
+            // Verify number of favorite tracks from test account
+            propertyArray = [[SCMe sharedMe].subresources objectForKey:@"favorites"];
+            numFavs = [propertyArray count];
+            if(numFavs != 2) {
+                NSLog(@"Table isn't updated with added fav track.");
+            }
+        });
     }
 }
 
